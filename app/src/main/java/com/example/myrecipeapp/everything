@@ -1,0 +1,38 @@
+List of all functions, data classes other than navigation
+
+Functions :-
+1. suspend fun getCategories :- contains CategoriesResponse
+2. fun RecipeScreen(modifier : Modifier = Modifier )
+3. private fun fetchCategories :- fetches list of categories
+4. fun CategoryScreen(categories  : List<Category>)
+5. fun CategoryItem(category: Category) :- Manages Text and image layout
+
+Data class:-
+1. Category :- contains all the properties of catogies available in json file
+2. CategoriesResponse :- contains categories as list of Category
+3.RecipeState :- Contains state of recipe whether its loading or returns an error and list
+
+Interface:-
+1. ApiService:- Contains last part of API Url
+
+important variables:-
+1. private val _retrofit :- contains baseUrl
+2. val recipeService :- connects baseUrl and main Url
+
+Dependencies required :-
+
+    //Compose ViewModel-->
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
+
+    // Network calls --> For collecting data from the internet and use it in our app
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+
+    //Json to Kotlin object mapping --> For Converting Json files into Kotlin Objects.
+    // Here we will find from where to load images
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    //Image loading --> To display and download images
+    // Here we will actually load images
+    implementation("io.coil-kt:coil-compose:2.4.0")
+
+    implementation("androidx.navigation:navigation-compose:2.7.4")
